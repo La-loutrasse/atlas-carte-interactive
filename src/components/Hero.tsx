@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Hero: React.FC = () => {
   return (
     <div className="relative min-h-[500px] md:min-h-[1024px] flex items-center justify-center text-center px-4 py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-[url(@/assets/imgs/banner_atlas.png)]"></div>
+      <div className="absolute inset-0 bg-[url(@/assets/imgs/banner_atlas.png)] bg-cover"></div>
       
       <div className="relative z-10 max-w-4xl mx-auto px-4">
         <motion.h1 
