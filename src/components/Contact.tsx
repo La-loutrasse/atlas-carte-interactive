@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, X, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Send, Twitter, Facebook, Instagram, Youtube } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +11,6 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     alert(`Thank you for subscribing with: ${formData.email}`);
 
   };
@@ -85,7 +84,7 @@ const Contact: React.FC = () => {
               <p className="text-gray-500 mb-2 text-sm">Nos réseaux</p>
               <div className="flex justify-center space-x-4">
                 <a href="#" className="text-gray-500 hover:text-amber-800 transition-colors duration-300">
-                  <X className="w-5 h-5" />
+                  <Twitter className="w-5 h-5" />
                 </a>
                 <a href="#" className="text-gray-500 hover:text-amber-800 transition-colors duration-300">
                   <Facebook className="w-5 h-5" />
