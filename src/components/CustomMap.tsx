@@ -1,9 +1,11 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, ImageOverlay, Marker, Popup } from 'react-leaflet';
+import { CRS } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import backgroundImage from '@/assets/imgs/maps.jpg';
 
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: markerIcon2x,
@@ -11,23 +13,28 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 });
 
+const imageBounds: [[number, number], [number, number]] = [
+  [0, 0],
+  [1440, 2068]
+];
+
 const CustomMap = () => {
   return (
     <div className="h-[80vh] w-full rounded-lg overflow-hidden shadow-md mt-6">
       <MapContainer
-        center={[48.8566, 2.3522]}
-        zoom={13}
-        scrollWheelZoom
+        crs={CRS.Simple}
+        bounds={imageBounds}
+        maxBounds={imageBounds}
+        minZoom={-1}
+        maxZoom={4}
+        zoom={2}
+        scrollWheelZoom={true}
         className="h-full w-full"
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
-        />
-        <Marker position={[48.8566, 2.3522]}>
-          <Popup>
-            Ici c'est <strong>Paris</strong> !
-          </Popup>
+        <ImageOverlay url={backgroundImage} bounds={imageBounds} />
+
+        <Marker position={[600, 300]} icon={L.icon({ iconUrl: markerIcon })}>
+          <Popup>Point d'intérêt</Popup>
         </Marker>
       </MapContainer>
     </div>
