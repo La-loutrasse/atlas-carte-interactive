@@ -9,10 +9,28 @@ const Contact: React.FC = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Thank you for subscribing with: ${formData.email}`);
 
+    try {
+      const res = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alert('Message envoyé avec succès');
+        setFormData({ nom: '', prenom: '', email: '', message: '' });
+      } else {
+        alert('Erreur lors de l’envoi du message');
+      }
+    } catch (error) {
+      console.error('Erreur de contact:', error);
+      alert('Erreur serveur');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
