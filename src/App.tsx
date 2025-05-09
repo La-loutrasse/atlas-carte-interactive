@@ -7,6 +7,7 @@ import RegisterPage from '@/pages/Register';
 import ProfilePage from '@/pages/Profile';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { useAuth, AuthProvider } from '@/contexts/AuthContext';
+import Footer from './components/Footer';
 
 function AppRoutes() {
   const { loading } = useAuth();
@@ -40,20 +41,21 @@ function AppRoutes() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-amber-50">
-        <div className="relative">
+      <AuthProvider>
+        <div className="min-h-screen flex flex-col bg-amber-50">
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center -z-10 opacity-20"
-            style={{ backgroundImage: "url('https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')" }}
           />
-          <AuthProvider>
-            <Navbar />
+          <Navbar />
+          <main className="flex-1">
             <AppRoutes />
-          </AuthProvider>
+          </main>
+          <Footer />
         </div>
-      </div>
+      </AuthProvider>
     </Router>
   );
 }
+
 
 export default App;
