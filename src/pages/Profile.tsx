@@ -1,3 +1,4 @@
+import UserJournal from '@/components/UserJournal';
 import { useAuth } from '@/contexts/AuthContext';
 
 export default function ProfilePage() {
@@ -12,6 +13,10 @@ export default function ProfilePage() {
       <button onClick={logout} className="mt-4 bg-red-600 text-white p-2 rounded">
         Déconnexion
       </button>
+      <div className="border-t pt-6">
+        <h2 className="text-xl font-semibold mb-4 text-amber-800">Mon Journal</h2>
+        <UserJournal />
+      </div>
     </div>
   );
 }
