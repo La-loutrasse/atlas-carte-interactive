@@ -31,33 +31,38 @@ export default function AuthForm({ isRegister }: AuthFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      {isRegister && (
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
+      <div className="space-y-3">
+        {isRegister && (
+          <input
+            type="text"
+            placeholder="Username"
+            className='w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-800'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        )}
         <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          type="email"
+          placeholder="Email"
+          className='w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-800'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
-      )}
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Mot de passe"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit" className="bg-amber-700 text-white p-2 rounded">
-        {isRegister ? "S'inscrire" : "Se connecter"}
-      </button>
+        <input
+          type="password"
+          placeholder="Mot de passe"
+          value={password}
+          className='w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-800'
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit" className="bg-amber-700 hover:bg-amber-800 text-white py-3 px-6 rounded-md transition-colors duration-300 flex items-center justify-center w-full">
+          {isRegister ? "S'inscrire" : "Se connecter"}
+        </button>
+      </div>
     </form>
   );
 }
