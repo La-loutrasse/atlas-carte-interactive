@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const { user, logout } = useAuth();
 
   return (
-    <nav className="w-full bg-white/90 shadow-md fixed top-0 z-50">
+    <nav className="w-full bg-white/90 shadow-md fixed top-0 z-1000">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
