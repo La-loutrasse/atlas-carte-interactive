@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { createUser, findUserByEmail } from '../models/userModel';
-import { hashPassword, comparePassword } from '../utils/hash';
-import { generateToken } from '../utils/jwt';
+import { createUser, findUserByEmail } from '../models/userModel.js';
+import { hashPassword, comparePassword } from '../utils/hash.js';
+import { generateToken } from '../utils/jwt.js';
 
 export const register = async (req: Request, res: Response): Promise<void> => {
   const { username, email, password } = req.body;

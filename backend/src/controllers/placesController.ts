@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { db } from '../utils/db';
+import { db } from '../utils/db.js';
 
 export const getPlaces = async (req: Request, res: Response): Promise<void> => {
   try {

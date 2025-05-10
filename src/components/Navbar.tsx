@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
+import logo from '../../public/assets/logo.svg';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/public/logo.svg" alt="Logo" className="size-10" />
+            <img src={logo} alt="Logo" className="size-10" />
             <span className="font-bold text-amber-900 text-2xl">Atlas</span>
           </Link>
 

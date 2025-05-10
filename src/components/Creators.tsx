@@ -5,17 +5,17 @@ const Creators: React.FC = () => {
   const creators = [
     {
       name: 'Alexis',
-      image: '/src/assets/imgs/alex.jpg',
+      image: '/imgs/alex.jpg',
       description: 'Maître artisan et graphiste talentueux, Alexis façonne des univers où chaque détail raconte une histoire.'
     },
     {
       name: 'Pauline',
-      image: '/src/assets/imgs/pauline.png',
+      image: '/imgs/pauline.png',
       description: 'Artiste visionnaire passionnée des mondes féeriques, Pauline donne vie aux créatures qui peuplent nos rêves.'
     },
     {
       name: 'Océane',
-      image: '/src/assets/imgs/oce.jpg',
+      image: '/imgs/oce.jpg',
       description: 'Narratrice exceptionnelle, Océane tisse des légendes captivantes qui transportent le lecteur vers des contrées lointaines.'
     }
   ];

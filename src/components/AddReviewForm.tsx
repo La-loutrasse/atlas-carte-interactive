@@ -52,6 +52,7 @@ const AddReviewForm = () => {
           value={selectedPlaceId}
           onChange={(e) => setSelectedPlaceId(e.target.value)}
           required
+          aria-label="Sélectionner un lieu"
         >
           <option value="">Choisir un lieu</option>
           {places.map((place) => (

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import {db} from '../utils/db';
-import { AuthenticatedRequest } from '../middlewares/authMiddleware';
+import {db} from '../utils/db.js';
+import { AuthenticatedRequest } from '../middlewares/authMiddleware.js';
 
 export const getPublicReviews = async (req: Request, res: Response) => {
   try {

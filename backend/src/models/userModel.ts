@@ -1,6 +1,6 @@
 
-import { db } from '../utils/db';
-import { User } from '../types/User';
+import { db } from '../utils/db.js';
+import { User } from '../types/User.js';
 
 export const findUserByEmail = async (email: string): Promise<User | null> => {
     const [rows] = await db.query('SELECT * FROM users WHERE email = ?', [email]);

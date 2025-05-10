@@ -1,7 +1,14 @@
 {
-    "compilerOptions": {
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-    }
-  }
-  
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "rootDir": "./src",
+    "outDir": "../dist-backend",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}

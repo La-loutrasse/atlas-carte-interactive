@@ -1,7 +1,7 @@
 import { Response, NextFunction } from 'express';
-import { AuthenticatedRequest } from '../middlewares/authMiddleware';
-import { db } from '../utils/db';
-import { User } from '../types/User';
+import { AuthenticatedRequest } from '../middlewares/authMiddleware.js';
+import { db } from '../utils/db.js';
+import { User } from '../types/User.js';
 
 export const getMe = async (req: AuthenticatedRequest, res: Response, next: NextFunction): Promise<void> => {
   try {

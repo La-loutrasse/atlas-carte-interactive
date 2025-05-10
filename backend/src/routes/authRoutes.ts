@@ -1,8 +1,8 @@
 import express, { Response } from 'express';
-import { authenticateToken, AuthenticatedRequest } from '../middlewares/authMiddleware';
-import { db } from '../utils/db';
-import { User } from '../types/User';
-import { login, register } from '../controllers/authController';
+import { authenticateToken, AuthenticatedRequest } from '../middlewares/authMiddleware.js';
+import { db } from '../utils/db.js';
+import { User } from '../types/User.js';
+import { login, register } from '../controllers/authController.js';
 
 const router = express.Router();
 router.post('/register', register);
