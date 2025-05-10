@@ -10,7 +10,7 @@ const Creators: React.FC = () => {
     },
     {
       name: 'Pauline',
-      image: '/imgs/pauline.png',
+      image: '/imgs/pauline.jpg',
       description: 'Artiste visionnaire passionnée des mondes féeriques, Pauline donne vie aux créatures qui peuplent nos rêves.'
     },
     {
